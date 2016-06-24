@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Image Analysis</title>
+	<script src="main.js"></script>
+  <script src="edge.js"></script>
+</head>
+<body>
+
+<div id="uploadImage">
+	<fieldset><legend>Your image here</legend>
+	    <div  id="imgstore">
+	    <canvas id="orgImage" ></canvas>
+	    </div>
+
+	</fieldset>
+	<fieldset><legend>Sobel Image</legend>
+	    <div  id="Result">
+	    <canvas id="newImage" ></canvas>
+	    </div>
+
+	</fieldset>
+<input type="file" id="getimage">
+</div>
+
+  
+<script >
+	
+	function manageImage(evt){
+
+		evt.stopPropagation();
+		evt.preventDefault();
+		main.readImage(evt.target.files);
+  	}
+
+   	var y = document.getElementById("getimage");
+  	y.addEventListener('change', manageImage, false);
+</script>
+
+</body>
+</html>
